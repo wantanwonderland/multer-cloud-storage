@@ -1,5 +1,5 @@
 import multer = require('multer');
-import { Bucket, CreateWriteStreamOptions, PredefinedAcl, Storage, StorageOptions } from '@google-cloud/storage';
+import { Bucket, CreateWriteStreamOptions, Storage, StorageOptions } from '@google-cloud/storage';
 import { v4 as uuid } from 'uuid';
 import urlencode = require('urlencode');
 import { Request } from 'express';
