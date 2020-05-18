@@ -8,7 +8,7 @@ export default class MulterGoogleCloudStorage implements multer.StorageEngine {
 
 	private gcsBucket: Bucket;
 	private gcsStorage: Storage;
-	private options: StorageOptions & { acl?: PredefinedAcl, bucket?: string, contentType?: ContentTypeFunction };
+	private options: StorageOptions & { bucket?: string, contentType?: ContentTypeFunction };
 	private blobFile: {destination?: string, filename: string} = { destination: '', filename: '' };
 		
 	getFilename( req, file, cb ) {
@@ -115,7 +115,7 @@ export default class MulterGoogleCloudStorage implements multer.StorageEngine {
 			var blob = this.gcsBucket.file(blobName);
 
 			const streamOpts: CreateWriteStreamOptions = {
-				predefinedAcl: this.options.acl || 'private'
+				//predefinedAcl: this.options.acl || 'private'
 			};
 
 			const contentType = this.getContentType(req, file);
